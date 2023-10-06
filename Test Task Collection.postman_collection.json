@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "342cee57-d223-4012-8a4b-7fc1ea0d6d0f",
+		"name": "Test Task Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4522055",
+		"_collection_link": "https://escrow-api.postman.co/workspace/Team-Workspace~7c4a548f-fc41-464f-8d9e-596f9d7c8cf8/collection/4522055-342cee57-d223-4012-8a4b-7fc1ea0d6d0f?action=share&source=collection_link&creator=4522055"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\" : \"Valeriy\",\r\n    \"last_name\" : \"Veselovskiy\",\r\n    \"email\" : \"magorik5@gmail.com\",\r\n    \"password\" : \"sadist25\",\r\n    \"phone\": \"0955810389\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"magorik5@gmail.com\",\r\n    \"password\": \"sadist25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/sign-in",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Company",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-token",
+						"value": "{{api-token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"testcompkjlany2\",\r\n    \"phone\": \"0955810389\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/companies",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Companies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-token",
+						"value": "{{api-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/user/companies",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Recover Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"magorik5@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/recover-password-create",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"recover-password-create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process Recover Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recover_token\": \"fec681eadbec9e09bbe128a820b90feb9ad3fa34b2c76f72a92fb79c03961e2fc07044131c96d8c7598a151ffe87083cbc1f99bf38dfc1290d642bd4354fc02ba9eed7e51c62fdf1fcd146ba64577fadb5c7cea9d86a6cddebe5faf7b640179941a79d58\",\r\n    \"new_password\" : \"sadist25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/recover-password-process",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"recover-password-process"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api-token",
+			"value": "yqM8EKITUt1pWnBfLOmJa6X5PPHe2CLAHpkH1WNm"
+		}
+	]
+}
